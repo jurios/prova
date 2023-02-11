@@ -37,7 +37,13 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            //
+            'settings' => [
+                'apikeys' => [
+                    'googlemaps' => app('config')->get('app.apikeys.googlemaps') === ""
+                        ? null
+                        : app('config')->get('app.apikeys.googlemaps')
+                ]
+            ]
         ]);
     }
 }

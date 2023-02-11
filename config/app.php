@@ -212,4 +212,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'apikeys' => [
+        'googlemaps' => env('GOOGLE_MAPS_APIKEY', null)
+    ]
 ];

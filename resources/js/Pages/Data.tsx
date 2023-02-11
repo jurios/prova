@@ -1,4 +1,4 @@
-import {Head} from "@inertiajs/react";
+import React from "react";
 import Layout from "../Layout/Layout";
 
 const Data = () => {
@@ -6,8 +6,10 @@ const Data = () => {
     <>
     </>
   );
-}
+};
 
-Data.layout = page => <Layout children={page} title="Taula de dades" />
+Data.layout = page => <Layout title="Taula de dades" >
+  {page}
+</Layout>;
 
 export default Data;

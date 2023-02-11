@@ -22,9 +22,10 @@ class ObservationFactory extends Factory
         /** @var Carbon $date */
         $date = Carbon::make($this->faker->dateTimeBetween('-10 years'));
 
+        $name = $this->faker->unique()->name;
         return [
-            'name' => $this->faker->name,
-            'latin_name' => $this->faker->name,
+            'name' => $name,
+            'latin_name' => $name . '_latin',
             'family' => $this->faker->name,
             'taxonomy' => Taxonomy::Aus,
             'latitude' => $this->faker->latitude,

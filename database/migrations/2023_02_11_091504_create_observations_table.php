@@ -30,6 +30,8 @@ return new class extends Migration
 
             $table->string('observer_name');
             $table->string('locality');
+
+            $table->unique(['name', 'latin_name']);
         });
     }
 

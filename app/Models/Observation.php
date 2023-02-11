@@ -17,5 +17,7 @@ class Observation extends Model
     protected $casts = [
         'taxonomy' => Taxonomy::class,
         'observed_at' => 'datetime',
+        'latitude' => 'float',
+        'longitude' => 'float'
     ];
 }
