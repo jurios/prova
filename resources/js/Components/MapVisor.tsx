@@ -9,13 +9,15 @@ interface MapVisorProps  {
 export default function MapVisor(props: MapVisorProps) {
   const ref = useRef<HTMLDivElement>();
   const [map, setMap] = useState<google.maps.Map>();
+  const [markers, setMarkers] = useState<Marker[]>([]);
 
   useEffect(() => {
-    const markers: Marker[] =props.markers.map(latLng => new google.maps.Marker({
+    markers.forEach(marker => marker.setMap(null));
+    const newMarkers: Marker[] =props.markers.map(latLng => new google.maps.Marker({
       position: latLng,
     }));
-
-    new MarkerClusterer({markers, map});
+    setMarkers(newMarkers);
+    new MarkerClusterer({markers: newMarkers, map});
 
   }, [props.markers, map]);
 

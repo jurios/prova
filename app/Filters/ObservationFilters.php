@@ -27,6 +27,6 @@ class ObservationFilters extends Filters
      */
     protected function species(Builder $query, string $specie): Builder
     {
-        return $query->where('specie', $specie);
+        return $query->where('latin_name', $specie);
     }
 }

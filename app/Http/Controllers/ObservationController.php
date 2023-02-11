@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\ObservationFilters;
 use App\Models\Observation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class ObservationController extends Controller
 {
-    public function map(): Response
+    public function map(Request $request): Response
     {
         return Inertia::render('Map', [
-            'observations' => Observation::all(),
+            'observations' => Observation::filters(ObservationFilters::class, $request->all())->get(),
             'species' => DB::table('observations')
                 ->select('name', 'latin_name')
                 ->groupBy('latin_name', 'name')
