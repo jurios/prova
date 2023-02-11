@@ -2,13 +2,19 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "lint": "npx eslint resources/js/**/*.{ts,tsx}",
+        "lint:fix": "npm run lint -- --fix"
     },
     "devDependencies": {
         "@inertiajs/react": "^1.0.0",
         "@types/react": "^18.0.27",
+        "@typescript-eslint/eslint-plugin": "^5.51.0",
+        "@typescript-eslint/parser": "^5.51.0",
         "@vitejs/plugin-react": "^3.1.0",
         "axios": "^1.1.2",
+        "eslint": "^8.34.0",
+        "eslint-plugin-react": "^7.32.2",
         "laravel-vite-plugin": "^0.7.2",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
