@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ObservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return \Inertia\Inertia::render('Welcome', []);
+    return redirect()->route('app.observations.map');
 });
+
+Route::get('/map', [ObservationController::class, 'map'])->name('app.observations.map');
+Route::get('/data', [ObservationController::class, 'data'])->name('app.observations.data');
