@@ -4,7 +4,7 @@ export default function Welcome() {
   return (
     <>
       <Head title="Welcome" />
-      <h1>Welcome</h1>
+      <h1 className="text-red-800">Welcome</h1>
     </>
   );
 }
