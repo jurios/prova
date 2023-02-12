@@ -60,7 +60,8 @@ class ImportObservations extends Command
                         'locality' => $data[15],
                     ]);
                 } catch (Exception $e) {
-                    $this->info("Line {$row} is not compatible: {$e->getMessage()}");
+                    $line = $row + 3; // 2 lines have been excluded because they are headers. + 1 for starting from 1 instead of 0
+                    $this->info("Line {$line} is not compatible: {$e->getMessage()}");
                 }
             }
         }
