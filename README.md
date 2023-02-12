@@ -11,6 +11,9 @@ A més, `docker` ha de poder-se llançar per l'usuari. (https://docs.docker.com/
 La base de dades postgres, el PHP i el servidor web s'instal·larà com contenidors docker 
 pel que no és necessari cap instal·lació addicional.
 
+Tingueu en compte que els ports que va a fer servir estos serveis són el `80` i el `5432` 
+pel que haurien d'estar disponibles.
+
 
 ## Configuració
 Copiar el fitxer de configuració:
