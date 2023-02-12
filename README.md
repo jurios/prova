@@ -11,7 +11,7 @@ A més, `docker` ha de poder-se llançar per l'usuari. (https://docs.docker.com/
 La base de dades postgres, el PHP i el servidor web s'instal·larà com contenidors docker 
 pel que no és necessari cap instal·lació addicional.
 
-Tingueu en compte que els ports que va a fer servir estos serveis són el `80` i el `5432` 
+Tingueu en compte que els ports que va a fer servir aquests serveis són el `80` i el `5432` 
 pel que haurien d'estar disponibles.
 
 
@@ -45,7 +45,7 @@ Aquest pas trigarà un poc perquè descarregarà totes les imatges necessàries 
 vendor/bin/sail up -d
 ```
 ## Generar una app key
-Aquest pas és necessari per fer funciona la aplicació Laravel:
+Aquest pas és necessari per fer funcionar l'aplicació Laravel:
 
 ```
 vendor/bin/sail php artisan key:generate
