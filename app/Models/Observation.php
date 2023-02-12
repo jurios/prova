@@ -17,7 +17,20 @@ class Observation extends Model
     protected $casts = [
         'taxonomy' => Taxonomy::class,
         'observed_at' => 'datetime',
+        'observed_at_week' => 'datetime',
         'latitude' => 'float',
         'longitude' => 'float'
+    ];
+
+    protected $fillable = [
+        'name',
+        'latin_name',
+        'latitude',
+        'longitude',
+        'count',
+        'observed_at',
+        'observed_at_week',
+        'observer_name',
+        'locality',
     ];
 }

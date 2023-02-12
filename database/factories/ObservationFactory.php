@@ -21,6 +21,7 @@ class ObservationFactory extends Factory
     {
         /** @var Carbon $date */
         $date = Carbon::make($this->faker->dateTimeBetween('-10 years'));
+        $week_starts_at = Carbon::make($date)->startOfWeek(Carbon::MONDAY);
 
         $name = $this->faker->unique()->name;
         return [
@@ -32,6 +33,7 @@ class ObservationFactory extends Factory
             'longitude' => $this->faker->longitude,
             'count' => $this->faker->numberBetween(1, 500),
             'observed_at' => $date,
+            'observed_at_week' => $week_starts_at,
             'year' => $date->year,
             'observer_name' => $this->faker->name,
             'locality' => $this->faker->name

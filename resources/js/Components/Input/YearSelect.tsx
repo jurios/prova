@@ -39,7 +39,7 @@ export default function YearSelect(props: SpeciesSelectProps) {
     <Combobox as="div" value={selectedYear} onChange={handleOnChange}>
       <Combobox.Label className="block text-sm font-medium text-gray-700">
         <div className="flex flex-row">
-          <span>Any de la observació</span>
+          <span>Any de l&apos;observació</span>
           {
             selectedYear !== null ? (
               <ResetBadge onClick={() => {

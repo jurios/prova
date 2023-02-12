@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('latin_name', 255);
-            $table->string('family');
-            $table->enum('taxonomy', [\App\Taxonomy::Aus->value]);
 
             $table->decimal('latitude', 16, 13);
             $table->decimal('longitude', 16, 13);
@@ -26,12 +24,12 @@ return new class extends Migration
             $table->unsignedInteger('count');
 
             $table->timestamp('observed_at');
-            $table->unsignedInteger('year');
+            $table->timestamp('observed_at_week');
 
             $table->string('observer_name');
             $table->string('locality');
 
-            $table->unique(['name', 'latin_name']);
+            $table->index(['name', 'latin_name']);
         });
     }
 
